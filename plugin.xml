@@ -10,8 +10,8 @@
 
     <license>AGPL v3</license>
     <keywords>cordova,android,background service,new picture</keywords>
-    <!--repo>https://github.com/jacquarg/cordova-jsbackgroundservice.git</repo>
-    <issue>https://github.com/jacquarg/cordova-jsbackgroundservice/issues/</issue-->
+    <repo>https://github.com/jacquarg/cordova-jsbgservice-newpicture.git</repo>
+    <issue>https://github.com/jacquarg/cordova-jsbgservice-newpicture/issues/</issue>
 
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
