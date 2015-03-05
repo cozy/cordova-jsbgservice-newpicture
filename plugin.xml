@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="io.cozy.jsbgservice-newpicture"
+        version="0.0.1">
+    <name>JSBgSerivce new picture</name>
+    <description>
+        Plugin on top of Javascript Backgournd Services, which start it on new picture taken with camera.
+    </description>
+
+    <license>AGPL v3</license>
+    <keywords>cordova,android,background service,new picture</keywords>
+    <!--repo>https://github.com/jacquarg/cordova-jsbackgroundservice.git</repo>
+    <issue>https://github.com/jacquarg/cordova-jsbackgroundservice/issues/</issue-->
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+    <dependency id="io.cozy.jsbackgroundservice" url="https://github.com/jacquarg/cordova-jsbackgroundservice.git"/>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <receiver android:name="io.cozy.jsbackgroundservice.NewPictureReceiver">
+                <intent-filter>     
+                    <action android:name="android.hardware.action.NEW_PICTURE"/>
+                    <!-- Old undocumented intent, hearsay used on some Samsungs and HTCs. -->
+                    <action android:name="com.android.camera.NEW_PICTURE"/>
+                    <category android:name="android.intent.category.DEFAULT" />
+                    <data android:mimeType="image/*" />
+                </intent-filter> 
+            </receiver>
+        </config-file>
+        
+        <source-file src="src/android/NewPictureReceiver.java" target-dir="src/io/cozy/jsbackgroundservice" />
+
+    </platform>
+</plugin>
