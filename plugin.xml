@@ -29,9 +29,16 @@
                     <category android:name="android.intent.category.DEFAULT" />
                     <data android:mimeType="image/*" />
                 </intent-filter> 
+                <intent-filter>     
+                    <action android:name="android.net.wifi.supplicant.CONNECTION_CHANGE"/>
+                </intent-filter>
             </receiver>
         </config-file>
-        
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <!-- TODO : might be overkill -->
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        </config-file>
+
         <source-file src="src/android/NewPictureReceiver.java" target-dir="src/io/cozy/jsbackgroundservice" />
 
     </platform>

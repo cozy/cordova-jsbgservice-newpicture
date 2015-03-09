@@ -4,16 +4,32 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+import android.net.wifi.WifiManager;
+import android.hardware.Camera;
+import android.util.Log;
+
+import android.content.SharedPreferences;
+import android.content.Context;
+
 public class NewPictureReceiver extends BroadcastReceiver {
-    //private static final String TAG = "JSBackgroundPlugin";
+    private static final String TAG = "JSBackgroundPlugin";
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // Cursor cursor = arg0.getContentResolver().query(arg1.getData(),      null,null, null, null);
-        // cursor.moveToFirst();
-        // String image_path = cursor.getString(cursor.getColumnIndex("_data"));
-        // Toast.makeText(arg0, "New Photo is Saved as : " + image_path, 1000).show();
-        LifecycleManager manager = new LifecycleManager(context);
-        manager.debouncedStart("NEW_PICTURE");
+        SharedPreferences sharedPrefs = context.getSharedPreferences(
+            JSBackgroundServicePlugin.PREFERENCES, Context.MODE_PRIVATE);
+
+
+        if ((Camera.ACTION_NEW_PICTURE.equals(intent.getAction()) ||
+            (WifiManager.SUPPLICANT_CONNECTION_CHANGE_ACTION
+                    .equals(intent.getAction()) &&
+                intent.getBooleanExtra(
+                    WifiManager.EXTRA_SUPPLICANT_CONNECTED, false))) &&
+            sharedPrefs.getBoolean(
+                JSBackgroundServicePlugin.PREF_LISTEN_NEW_PICTURE, false)
+            ) {
+            LifecycleManager manager = new LifecycleManager(context);
+            manager.debouncedStart("NEW_PICTURE");
+        }
     }
 }
