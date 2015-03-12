@@ -1,6 +1,6 @@
 # Start on new picture for Javascript-Background-Service plugin for cordova (Android)
 
-Plugin on top of Javascript Backgournd Services, which starts it on new picture taken with camera.
+Plugin on top of Javascript Backgournd Services, which starts it on new picture taken with camera, and on wifi connection.
 
 It relies on [ACTION_NEW_PICTURE](http://developer.android.com/reference/android/hardware/Camera.html#ACTION_NEW_PICTURE) broadcast intent, and perform a debounce launch of the service.
 
