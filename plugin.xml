@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="io.cozy.jsbgservice-newpicture"
-        version="0.0.1">
+        version="1.0.0">
     <name>JSBgSerivce new picture</name>
     <description>
         Plugin on top of Javascript Backgournd Services, which start it on new picture taken with camera.
@@ -10,8 +10,8 @@
 
     <license>AGPL v3</license>
     <keywords>cordova,android,background service,new picture</keywords>
-    <repo>https://github.com/jacquarg/cordova-jsbgservice-newpicture.git</repo>
-    <issue>https://github.com/jacquarg/cordova-jsbgservice-newpicture/issues/</issue>
+    <repo>https://github.com/cozy/cordova-jsbgservice-newpicture.git</repo>
+    <issue>https://github.com/cozy/cordova-jsbgservice-newpicture/issues/</issue>
 
     <engines>
         <engine name="cordova" version=">=3.0.0"/>

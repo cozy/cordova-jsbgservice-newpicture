@@ -5,7 +5,7 @@ Plugin on top of Javascript Backgournd Services, which starts it on new picture 
 It relies on [ACTION_NEW_PICTURE](http://developer.android.com/reference/android/hardware/Camera.html#ACTION_NEW_PICTURE) broadcast intent, and perform a debounce launch of the service.
 
 ## Supported Platforms
-Android only (SDK >= 14 - ICS). (Tested on Lollipop).
+Android only (SDK >= 14 - ICS).
 
 ## Dependencies
 
@@ -16,7 +16,7 @@ Cordova will check all dependencies and install them if they are missing.
 
 ## License
 
-This cordova plugin is developed by Cozy Cloud and distributed under the AGPL v3 license.
+This cordova plugin is developed by Cozy Cloud and distributed under the [MIT](https://github.com/cozy/cordova-jsbgservice-newpicture/blob/master/LICENSE.md).
 
 ## What is Cozy?
 
